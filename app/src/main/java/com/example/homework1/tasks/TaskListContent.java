@@ -1,5 +1,8 @@
 package com.example.homework1.tasks;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -58,7 +61,7 @@ public class TaskListContent {
     }
 
 
-    public static class Task {
+    public static class Task implements Parcelable {
         public final String id;
         public final String name;
         public final String surname;
@@ -84,9 +87,45 @@ public class TaskListContent {
         }
 
 
+        protected Task(Parcel in) {
+            id = in.readString();
+            name = in.readString();
+            surname = in.readString();
+            birthday = in.readString();
+            phone = in.readString();
+            sPath = in.readString();
+        }
+
+        public static final Creator<Task> CREATOR = new Creator<Task>() {
+            @Override
+            public Task createFromParcel(Parcel in) {
+                return new Task(in);
+            }
+
+            @Override
+            public Task[] newArray(int size) {
+                return new Task[size];
+            }
+        };
+
         @Override
         public String toString() {
             return name;
+        }
+
+        @Override
+        public int describeContents() {
+            return 0;
+        }
+
+        @Override
+        public void writeToParcel(Parcel dest, int flags) {
+            dest.writeString(id);
+            dest.writeString(name);
+            dest.writeString(surname);
+            dest.writeString(birthday);
+            dest.writeString(phone);
+            dest.writeString(sPath);
         }
     }
 }

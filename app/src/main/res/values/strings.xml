@@ -22,5 +22,6 @@
     <string name="long_click_msg">Deleting element number</string>
     <string name="delete_cancel_msg">Try again?</string>
     <string name="retry_msg">retry</string>
+    <string name="item_selected_msg">INFO</string>
 
 </resources>

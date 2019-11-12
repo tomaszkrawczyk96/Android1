@@ -34,6 +34,8 @@ public class MainActivity extends AppCompatActivity implements
     static public Uri[] sounds;
     private int currentSound= - 1;
 
+    public static final String taskExtra = "taskExtra";
+
 
 
     @Override
@@ -65,6 +67,8 @@ public class MainActivity extends AppCompatActivity implements
 
     @Override
     public void onListFragmentClickInteraction(TaskListContent.Task task, int position) {
+        Toast.makeText(this,getString(R.string.item_selected_msg),Toast.LENGTH_SHORT ).show();
+        startSecondActivity(task,position);
 
     }
 
@@ -88,7 +92,7 @@ public class MainActivity extends AppCompatActivity implements
             default:
                 currentSound = 3;
         }
-        Toast.makeText(this,"play" + position,Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"play element" + position,Toast.LENGTH_SHORT).show();
         buttonPlayer.reset();
         try {
 //Set Data source according to the current_sound value
@@ -165,4 +169,11 @@ public class MainActivity extends AppCompatActivity implements
         }
 
     }
+
+    private void startSecondActivity(TaskListContent.Task task,int position) {
+        Intent intent = new Intent(this,TaskInfoActivity.class);
+        intent.putExtra(taskExtra,task);
+        startActivity(intent);
+    }
+
 }
