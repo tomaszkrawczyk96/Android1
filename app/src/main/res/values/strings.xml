@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Homework1</string>
+    <string name="NAME">name</string>
+    <string name="SURNAME">surname</string>
+    <string name="BIRTHDAY">birthday</string>
+    <string name="PHONE">phone</string>
+    <string name="add_task">add</string>
+    <string name="back_message">canceled</string>
+    <string-array name="sounds">
+        <item>sound 1</item>
+        <item>sound 2</item>
+        <item>sound 3</item>
+        <item>sound 4</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="delete_question">Delete that ?</string>
+    <string name="dialog_confirm">Yes</string>
+    <string name="dialog_cancel">No</string>
+    <string name="delete_dialog_tag">Delete dialog tag</string>
+    <string name="long_click_msg">Deleting element number</string>
+    <string name="delete_cancel_msg">Try again?</string>
+    <string name="retry_msg">retry</string>
+
+</resources>
