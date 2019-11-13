@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -68,8 +69,11 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     public void onListFragmentClickInteraction(TaskListContent.Task task, int position) {
         Toast.makeText(this,getString(R.string.item_selected_msg),Toast.LENGTH_SHORT ).show();
-        startSecondActivity(task,position);
-
+        if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            displayTaskInFragment(task);
+        } else {
+            startSecondActivity(task, position);
+        }
     }
 
     @Override
@@ -176,4 +180,11 @@ public class MainActivity extends AppCompatActivity implements
         startActivity(intent);
     }
 
+
+    private void displayTaskInFragment(TaskListContent.Task task) {
+        TaskInfoFragment taskInfoFragment  = ((TaskInfoFragment) getSupportFragmentManager().findFragmentById(R.id.displayFragment));
+        if(taskInfoFragment != null) {
+            taskInfoFragment.displayTask(task);
+        }
+    }
 }

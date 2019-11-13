@@ -82,4 +82,5 @@ public class TaskInfoFragment extends Fragment {
         }
     }
 
+
 }
