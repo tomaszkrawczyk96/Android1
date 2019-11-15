@@ -23,5 +23,10 @@
     <string name="delete_cancel_msg">Try again?</string>
     <string name="retry_msg">retry</string>
     <string name="item_selected_msg">INFO</string>
+    <string name="bad_birthday">wrong birthday length</string>
+    <string name="bad_number">wrong phone length</string>
+    <string name="bad_birthday_1">wrong year</string>
+    <string name="bad_birthday_2">wrong month</string>
+    <string name="bad_birthday_3">wrong day</string>
 
 </resources>
