@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity implements
     public static final String BIRTHDAY = "date" ;
     public static final String PHONE = "number";
     public static final String SOUND = "sound";
+    public static final String PICTURE = "picture";
 
 
     private int currentItemPosition = -1;
@@ -136,7 +137,8 @@ public class MainActivity extends AppCompatActivity implements
                         data.getStringExtra(SURNAME),
                         data.getStringExtra(BIRTHDAY),
                         data.getStringExtra(PHONE),
-                        data.getStringExtra(SOUND)
+                        data.getStringExtra(SOUND),
+                        data.getStringExtra(PICTURE)
                         );
                 TaskListContent.addItem(task);
                 ((TaskFragment) getSupportFragmentManager().findFragmentById(R.id.taskFragment)).notifyDataChange();

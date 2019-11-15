@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import java.util.Random;
+
 public class CreatingActivity extends AppCompatActivity {
 
     @Override
@@ -41,12 +43,18 @@ public class CreatingActivity extends AppCompatActivity {
         if (taskSound.isEmpty())
             taskSound = "default sound";
 
+        Random rnd = new Random();
+        int i = rnd.nextInt()%4 +1;
+        String taskPicture = String.valueOf(i);
+
+
         Intent data = new Intent();
         data.putExtra(MainActivity.NAME,taskName);
         data.putExtra(MainActivity.SURNAME,taskSurname);
         data.putExtra(MainActivity.BIRTHDAY,taskBirthday);
         data.putExtra(MainActivity.PHONE,taskPhone);
         data.putExtra(MainActivity.SOUND,taskSound);
+        data.putExtra(MainActivity.PICTURE,taskPicture);
 
         setResult(RESULT_OK,data);
 

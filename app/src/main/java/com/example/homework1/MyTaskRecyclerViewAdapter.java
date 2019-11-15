@@ -50,16 +50,15 @@ public class MyTaskRecyclerViewAdapter extends RecyclerView.Adapter<MyTaskRecycl
         holder.mContentView.setText(task.name);
         Context context = holder.mView.getContext();
         Drawable taskDrawable;
-        Random rnd = new Random();
-        int i = rnd.nextInt()%4 +1;
+        String i = task.picPath;
         switch (i) {
-            case 1:
+            case "1":
                 taskDrawable = context.getResources().getDrawable(R.drawable.first);
                 break;
-            case 2:
+            case "2":
                 taskDrawable = context.getResources().getDrawable(R.drawable.second);
                 break;
-            case 3:
+            case "3":
                 taskDrawable = context.getResources().getDrawable(R.drawable.third);
                 break;
             default:
@@ -82,7 +81,7 @@ public class MyTaskRecyclerViewAdapter extends RecyclerView.Adapter<MyTaskRecycl
             public boolean onLongClick(View v) {
 
                     mListener.onListFragmentLongClickInteraction(holder.mItem, position); //tutaj [raz]
-                    return false;
+                    return true;
             }
         });
 

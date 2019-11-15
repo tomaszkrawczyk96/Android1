@@ -52,16 +52,16 @@ public class TaskInfoFragment extends Fragment {
         taskInfoSound.setText("Sound selected: " + task.sPath);
 
         Drawable taskDrawable;
-        Random rnd = new Random();
-        int i = rnd.nextInt()%4 +1;
+
+        String i = task.picPath;
         switch (i) {
-            case 1:
+            case "1":
                 taskDrawable = activity.getResources().getDrawable(R.drawable.first);
                 break;
-            case 2:
+            case "2":
                 taskDrawable = activity.getResources().getDrawable(R.drawable.second);
                 break;
-            case 3:
+            case "3":
                 taskDrawable = activity.getResources().getDrawable(R.drawable.third);
                 break;
             default:

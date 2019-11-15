@@ -68,6 +68,7 @@ public class TaskListContent {
         public final String birthday;
         public final String phone;
         public final String sPath;
+        public final String picPath;
 
         public Task(String id, String name, String surname, String birthday, String phone) {
             this.id = id;
@@ -76,14 +77,16 @@ public class TaskListContent {
             this.birthday = birthday;
             this.phone = phone;
             this.sPath = "";
+            this.picPath = "";
         }
-        public Task(String id, String name, String surname, String birthday, String phone, String sPath) {
+        public Task(String id, String name, String surname, String birthday, String phone, String sPath, String picPath) {
             this.id = id;
             this.name = name;
             this.surname = surname;
             this.birthday = birthday;
             this.phone = phone;
             this.sPath = sPath;
+            this.picPath = picPath;
         }
 
 
@@ -94,6 +97,7 @@ public class TaskListContent {
             birthday = in.readString();
             phone = in.readString();
             sPath = in.readString();
+            picPath = in.readString();
         }
 
         public static final Creator<Task> CREATOR = new Creator<Task>() {
@@ -126,6 +130,7 @@ public class TaskListContent {
             dest.writeString(birthday);
             dest.writeString(phone);
             dest.writeString(sPath);
+            dest.writeString(picPath);
         }
     }
 }
